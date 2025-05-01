@@ -1,0 +1,12 @@
+{
+	"name": "ADLS_ls",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "AzureBlobFS",
+		"typeProperties": {
+			"url": "https://projhealthcare.dfs.core.windows.net/",
+			"encryptedCredential": "ew0KICAiVmVyc2lvbiI6ICIyMDE3LTExLTMwIiwNCiAgIlByb3RlY3Rpb25Nb2RlIjogIktleSIsDQogICJTZWNyZXRDb250ZW50VHlwZSI6ICJQbGFpbnRleHQiLA0KICAiQ3JlZGVudGlhbElkIjogIkRBVEFGQUNUT1JZQEEzRUQyMDgyLTE0OTMtNEU4Qy04OTU2LUQ1MjJFQ0RDMTNGRF80MjRjOWE5Zi03Y2U4LTQ1YTUtYmJlNi0wMGQ5MmVmNDI3ZWMiDQp9"
+		}
+	}
+}
