@@ -97,12 +97,46 @@
 													"type": "DelimitedTextReadSettings"
 												}
 											},
-											"enableStaging": false
+											"sink": {
+												"type": "DelimitedTextSink",
+												"storeSettings": {
+													"type": "AzureBlobFSWriteSettings"
+												},
+												"formatSettings": {
+													"type": "DelimitedTextWriteSettings",
+													"quoteAllText": true,
+													"fileExtension": ".txt"
+												}
+											},
+											"enableStaging": false,
+											"translator": {
+												"type": "TabularTranslator",
+												"typeConversion": true,
+												"typeConversionSettings": {
+													"allowDataTruncation": true,
+													"treatBooleanAsNumber": false
+												}
+											}
 										},
 										"inputs": [
 											{
 												"referenceName": "http_ds",
-												"type": "DatasetReference"
+												"type": "DatasetReference",
+												"parameters": {
+													"baseurl": {
+														"value": "@item.Link",
+														"type": "Expression"
+													}
+												}
+											}
+										],
+										"outputs": [
+											{
+												"referenceName": "raw_data_ds",
+												"type": "DatasetReference",
+												"parameters": {
+													"hosp": "@concat(item().HospitalName, '.csv')"
+												}
 											}
 										]
 									}
