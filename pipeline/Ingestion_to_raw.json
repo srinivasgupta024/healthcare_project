@@ -46,6 +46,10 @@
 				],
 				"userProperties": [],
 				"typeProperties": {
+					"items": {
+						"value": "@activity('Read_master_excel_file').output.value",
+						"type": "Expression"
+					},
 					"activities": [
 						{
 							"name": "Check_data_format",
