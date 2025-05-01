@@ -1,0 +1,9 @@
+{
+	"name": "healthcareprojadf",
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "e148c0cf-1571-4db3-871a-4fd716989cde",
+		"tenantId": "8d281d1d-9c4d-4bf7-b16e-032d15de9f6c"
+	}
+}
