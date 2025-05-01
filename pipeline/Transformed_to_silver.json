@@ -75,7 +75,10 @@
 										},
 										"userProperties": [],
 										"typeProperties": {
-											"notebookPath": "@item().RawNotebookPath"
+											"notebookPath": {
+												"value": "@concat('/Users/mxs230015@utdallas.edu/notebooks/raw/', activity('Lookup1').output.firstRow.HospitalName)\r\n",
+												"type": "Expression"
+											}
 										},
 										"linkedServiceName": {
 											"referenceName": "AzureDatabricks1",
