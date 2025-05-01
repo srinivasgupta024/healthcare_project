@@ -112,7 +112,7 @@
 												"type": "DatasetReference",
 												"parameters": {
 													"baseurl": {
-														"value": "@item.Link",
+														"value": "@item().Link",
 														"type": "Expression"
 													}
 												}
