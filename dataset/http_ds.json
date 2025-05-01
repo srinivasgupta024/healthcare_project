@@ -1,9 +1,20 @@
 {
-	"name": "DelimitedText1",
+	"name": "http_ds",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "Http_ls",
-			"type": "LinkedServiceReference"
+			"type": "LinkedServiceReference",
+			"parameters": {
+				"baseurl": {
+					"value": "@dataset().baseurl",
+					"type": "Expression"
+				}
+			}
+		},
+		"parameters": {
+			"baseurl": {
+				"type": "string"
+			}
 		},
 		"annotations": [],
 		"type": "DelimitedText",
