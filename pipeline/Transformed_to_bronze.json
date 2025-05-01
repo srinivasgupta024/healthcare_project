@@ -76,7 +76,7 @@
 										"userProperties": [],
 										"typeProperties": {
 											"notebookPath": {
-												"value": "@concat('/Users/mxs230015@utdallas.edu/notebooks/raw/',item().HospitalName)\n",
+												"value": "@concat('/Users/mxs230015@utdallas.edu/raw/',item().HospitalName)\n",
 												"type": "Expression"
 											}
 										},
