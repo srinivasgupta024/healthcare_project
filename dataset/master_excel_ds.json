@@ -1,0 +1,23 @@
+{
+	"name": "master_excel_ds",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ADLS_ls",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "hospmain.csv",
+				"fileSystem": "demo"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": []
+	}
+}
