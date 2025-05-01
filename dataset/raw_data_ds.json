@@ -1,5 +1,5 @@
 {
-	"name": "DelimitedText1",
+	"name": "raw_data_ds",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "ADLS_ls",
@@ -15,6 +15,10 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
+				"fileName": {
+					"value": "@dataset().hosp",
+					"type": "Expression"
+				},
 				"fileSystem": "raw"
 			},
 			"columnDelimiter": ",",
