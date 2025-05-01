@@ -64,10 +64,16 @@
 							}
 						},
 						{
-							"name": "If Condition1",
+							"name": "Check_data_format",
 							"type": "IfCondition",
 							"dependsOn": [],
-							"userProperties": []
+							"userProperties": [],
+							"typeProperties": {
+								"expression": {
+									"value": "@equals(toLower(item().Run), 'true')",
+									"type": "Expression"
+								}
+							}
 						}
 					]
 				}
