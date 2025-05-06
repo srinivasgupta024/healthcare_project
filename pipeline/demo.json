@@ -73,12 +73,7 @@
 											"secureOutput": false,
 											"secureInput": false
 										},
-										"userProperties": [
-											{
-												"name": "link",
-												"value": "'/Users/mxs230015@utdallas.edu/trialsv1/demo1'"
-											}
-										],
+										"userProperties": [],
 										"typeProperties": {
 											"notebookPath": {
 												"value": "'/Users/mxs230015@utdallas.edu/trialsv1/demo1'",
