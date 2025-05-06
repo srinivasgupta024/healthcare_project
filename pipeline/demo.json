@@ -76,7 +76,7 @@
 										"userProperties": [],
 										"typeProperties": {
 											"notebookPath": {
-												"value": "'/Users/mxs230015@utdallas.edu/trialsv1/demo1'",
+												"value": "/Users/mxs230015@utdallas.edu/trialsv1/demo1\n",
 												"type": "Expression"
 											},
 											"baseParameters": {
