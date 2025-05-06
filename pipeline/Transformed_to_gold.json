@@ -80,7 +80,10 @@
 												"type": "Expression"
 											},
 											"baseParameters": {
-												"hospital_name": "@item().HospitalName\n"
+												"hospital_name": {
+													"value": "@item().HospitalName\n",
+													"type": "Expression"
+												}
 											}
 										},
 										"linkedServiceName": {
@@ -108,9 +111,15 @@
 										},
 										"userProperties": [],
 										"typeProperties": {
-											"notebookPath": "/Users/mxs230015@utdallas.edu/gold/Transfor_to_warehouse",
+											"notebookPath": {
+												"value": "/Users/mxs230015@utdallas.edu/gold/Transfor_to_warehouse",
+												"type": "Expression"
+											},
 											"baseParameters": {
-												"hospital_name": "@item().HospitalName\n"
+												"hospital_name": {
+													"value": "@item().HospitalName\n",
+													"type": "Expression"
+												}
 											}
 										},
 										"linkedServiceName": {
