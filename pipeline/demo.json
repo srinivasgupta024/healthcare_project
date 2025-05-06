@@ -78,6 +78,9 @@
 											"notebookPath": {
 												"value": "@concat('/Users/mxs230015@utdallas.edu/silver/',item().HospitalName)\n",
 												"type": "Expression"
+											},
+											"baseParameters": {
+												"hospname": "@item().HospitalName\n"
 											}
 										},
 										"linkedServiceName": {
