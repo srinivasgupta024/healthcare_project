@@ -479,8 +479,50 @@
 												"userProperties": [],
 												"typeProperties": {
 													"notebookPath": {
-														"value": "@concat('/Users/mxs230015@utdallas.edu/silver/',item().HospitalName)\n",
+														"value": "/Users/mxs230015@utdallas.edu/silver/MCV2\n",
 														"type": "Expression"
+													},
+													"baseParameters": {
+														"hospital_name": {
+															"value": "@item().HospitalName\n",
+															"type": "Expression"
+														}
+													}
+												},
+												"linkedServiceName": {
+													"referenceName": "AzureDatabricks1",
+													"type": "LinkedServiceReference"
+												}
+											},
+											{
+												"name": "Notebook2",
+												"type": "DatabricksNotebook",
+												"dependsOn": [
+													{
+														"activity": "Notebook1",
+														"dependencyConditions": [
+															"Succeeded"
+														]
+													}
+												],
+												"policy": {
+													"timeout": "0.12:00:00",
+													"retry": 0,
+													"retryIntervalInSeconds": 30,
+													"secureOutput": false,
+													"secureInput": false
+												},
+												"userProperties": [],
+												"typeProperties": {
+													"notebookPath": {
+														"value": "/Users/mxs230015@utdallas.edu/gold/Transfor_to_warehouse",
+														"type": "Expression"
+													},
+													"baseParameters": {
+														"hospital_name": {
+															"value": "@item().HospitalName\n",
+															"type": "Expression"
+														}
 													}
 												},
 												"linkedServiceName": {
@@ -588,6 +630,119 @@
 													"notebookPath": {
 														"value": "@concat('/Users/mxs230015@utdallas.edu/bronze/',item().HospitalName)\n",
 														"type": "Expression"
+													}
+												},
+												"linkedServiceName": {
+													"referenceName": "AzureDatabricks1",
+													"type": "LinkedServiceReference"
+												}
+											}
+										]
+									}
+								}
+							]
+						}
+					}
+				],
+				"policy": {
+					"elapsedTimeMetric": {}
+				},
+				"annotations": []
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/datasets/master_excel_ds')]",
+				"[concat(variables('factoryId'), '/linkedServices/AzureDatabricks1')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/demo')]",
+			"type": "Microsoft.DataFactory/factories/pipelines",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"activities": [
+					{
+						"name": "Lookup1",
+						"type": "Lookup",
+						"dependsOn": [],
+						"policy": {
+							"timeout": "0.12:00:00",
+							"retry": 0,
+							"retryIntervalInSeconds": 30,
+							"secureOutput": false,
+							"secureInput": false
+						},
+						"userProperties": [],
+						"typeProperties": {
+							"source": {
+								"type": "DelimitedTextSource",
+								"storeSettings": {
+									"type": "AzureBlobFSReadSettings",
+									"recursive": true,
+									"enablePartitionDiscovery": false
+								},
+								"formatSettings": {
+									"type": "DelimitedTextReadSettings"
+								}
+							},
+							"dataset": {
+								"referenceName": "master_excel_ds",
+								"type": "DatasetReference",
+								"parameters": {}
+							},
+							"firstRowOnly": false
+						}
+					},
+					{
+						"name": "ForEach1",
+						"type": "ForEach",
+						"dependsOn": [
+							{
+								"activity": "Lookup1",
+								"dependencyConditions": [
+									"Succeeded"
+								]
+							}
+						],
+						"userProperties": [],
+						"typeProperties": {
+							"items": {
+								"value": "@activity('Lookup1').output.value",
+								"type": "Expression"
+							},
+							"activities": [
+								{
+									"name": "Check_to_Run",
+									"type": "IfCondition",
+									"dependsOn": [],
+									"userProperties": [],
+									"typeProperties": {
+										"expression": {
+											"value": "@equals(toLower(item().Run), 'true')",
+											"type": "Expression"
+										},
+										"ifTrueActivities": [
+											{
+												"name": "Notebook1",
+												"type": "DatabricksNotebook",
+												"dependsOn": [],
+												"policy": {
+													"timeout": "0.12:00:00",
+													"retry": 0,
+													"retryIntervalInSeconds": 30,
+													"secureOutput": false,
+													"secureInput": false
+												},
+												"userProperties": [],
+												"typeProperties": {
+													"notebookPath": {
+														"value": "/Users/mxs230015@utdallas.edu/silver/MCV2\n",
+														"type": "Expression"
+													},
+													"baseParameters": {
+														"hospital_name": {
+															"value": "@item().HospitalName\n",
+															"type": "Expression"
+														}
 													}
 												},
 												"linkedServiceName": {
