@@ -76,11 +76,11 @@
 										"userProperties": [],
 										"typeProperties": {
 											"notebookPath": {
-												"value": "@concat('/Users/mxs230015@utdallas.edu/silver/',item().HospitalName)\n",
+												"value": "@concat('/Users/mxs230015@utdallas.edu/trialsv1/demo1',item().HospitalName)\n",
 												"type": "Expression"
 											},
 											"baseParameters": {
-												"hospname": "@item().HospitalName\n"
+												"hospital_name": "@item().HospitalName\n"
 											}
 										},
 										"linkedServiceName": {
