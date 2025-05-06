@@ -76,8 +76,11 @@
 										"userProperties": [],
 										"typeProperties": {
 											"notebookPath": {
-												"value": "@concat('/Users/mxs230015@utdallas.edu/silver/',item().HospitalName)\n",
+												"value": "/Users/mxs230015@utdallas.edu/silver/MCV2\n",
 												"type": "Expression"
+											},
+											"baseParameters": {
+												"hospital_name": "@item().HospitalName\n"
 											}
 										},
 										"linkedServiceName": {
@@ -103,7 +106,17 @@
 											"secureOutput": false,
 											"secureInput": false
 										},
-										"userProperties": []
+										"userProperties": [],
+										"typeProperties": {
+											"notebookPath": "/Users/mxs230015@utdallas.edu/gold/Transfor_to_warehouse",
+											"baseParameters": {
+												"hospital_name": "@item().HospitalName\n"
+											}
+										},
+										"linkedServiceName": {
+											"referenceName": "AzureDatabricks1",
+											"type": "LinkedServiceReference"
+										}
 									}
 								]
 							}
