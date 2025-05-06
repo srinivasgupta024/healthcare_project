@@ -73,10 +73,15 @@
 											"secureOutput": false,
 											"secureInput": false
 										},
-										"userProperties": [],
+										"userProperties": [
+											{
+												"name": "link",
+												"value": "'/Users/mxs230015@utdallas.edu/trialsv1/demo1'"
+											}
+										],
 										"typeProperties": {
 											"notebookPath": {
-												"value": "@concat('/Users/mxs230015@utdallas.edu/trialsv1/demo1',item().HospitalName)\n",
+												"value": "'/Users/mxs230015@utdallas.edu/trialsv1/demo1'",
 												"type": "Expression"
 											},
 											"baseParameters": {
