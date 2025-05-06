@@ -76,11 +76,14 @@
 										"userProperties": [],
 										"typeProperties": {
 											"notebookPath": {
-												"value": "/Users/mxs230015@utdallas.edu/trialsv1/demo1\n",
+												"value": "/Users/mxs230015@utdallas.edu/silver/MCV2\n",
 												"type": "Expression"
 											},
 											"baseParameters": {
-												"hospital_name": "@item().HospitalName\n"
+												"hospital_name": {
+													"value": "@item().HospitalName\n",
+													"type": "Expression"
+												}
 											}
 										},
 										"linkedServiceName": {
